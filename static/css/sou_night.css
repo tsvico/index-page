@@ -341,7 +341,7 @@ a.quick_div_a {
 
 .foot {
   position: absolute;
-  bottom: 3rem;
+  bottom: 5em;
   z-index: 1000;
   text-align: center;
   width: 100%;

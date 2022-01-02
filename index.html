@@ -6,23 +6,23 @@
   <head>
     <meta charset="UTF-8" />
     <!--begin seo-->
-    <meta name="copyright" content="©️ 2020 Holger GPLv3.0" />
-    <meta name="author" content="Holger" />
-    <title>Minimalist Search - A homepage for everyone</title>
-    <meta name="keywords" content="Holger,Holger's Blog,aggregator,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航" />
-    <meta name="description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
+    <meta name="copyright" content="©️ 2021 tsvico GPLv3.0" />
+    <meta name="author" content="tsvico" />
+    <title>我感觉还行</title>
+    <meta name="keywords" content="我感觉还行,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航" />
+    <meta name="description" content="我感觉还行" />
     <!-- / FB Open Graph -->
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://i.holger.net.cn" />
-    <meta property="og:title" content="Minimalist Search - A homepage for everyone" />
-    <meta property="og:description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
+    <meta property="og:url" content="https://www.peoplevip.cn" />
+    <meta property="og:title" content="简单搜 - A homepage for everyone" />
+    <meta property="og:description" content="简单搜 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
     <meta property="og:image" content="./static/images/avatar.png" />
-    <meta property="og:site_name" content="Minimalist Search - A homepage with all websites you want!" />
+    <meta property="og:site_name" content="简单搜 - A homepage with all websites you want!" />
     <!-- / FB Open Graph end -->
     <!-- / Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Minimalist Search - A homepage for everyone" />
-    <meta name="twitter:description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
+    <meta name="twitter:title" content="简单搜 - A homepage for everyone" />
+    <meta name="twitter:description" content="简单搜 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
     <meta name="twitter:image" content="./static/images/avatar.png" />
     <!-- / Twitter Cards end -->
     <!--seo end-->
@@ -36,49 +36,19 @@
     <script type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <!--load sw.js ©️holger-->
     <script async>
-      'use strict';
-      'serviceWorker' in navigator &&
-        navigator.serviceWorker
-          .register('service-worker.js')
-          .then(function (a) {
-            a.onupdatefound = function () {
-              var b = a.installing;
-              b.onstatechange = function () {
-                switch (b.state) {
-                  case 'installed':
-                    navigator.serviceWorker.controller ? console.log('New or updated content is available.') : console.log('Content is now available offline!');
-                    break;
-                  case 'redundant':
-                    console.error('The installing service worker became redundant.');
-                }
-              };
-            };
-          })
-          .catch(function (a) {
-            console.error('Error during service worker registration:', a);
-          });
+      if (location.protocol == 'https:' && navigator.serviceWorker) {
+        navigator.serviceWorker.register('sw.js').then(
+          registration => console.log('success'),
+          error => console.error('register error')
+        );
+      }
     </script>
     <!--load sw.js end-->
     <!-- analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GP2P9TXKQ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-2GP2P9TXKQ');
-    </script>
-    <script async>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement('script');
-        hm.src = 'https://hm.baidu.com/hm.js?02764abec014df97eed8a885ec5204de';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
+      var storage = window.localStorage;
     </script>
     <!-- analytics end-->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
@@ -101,7 +71,6 @@
     <!--QQ应用模式-->
     <script src="static/js/jquery-3.4.1.min.js"></script>
     <script src="static/js/jQuery.rTabs.js"></script>
-    <script src="static/js/js.cookie.js"></script>
     <script src="static/js/sou.js"></script>
     <script async src="static/js/theme_auto.js"></script>
     <script async src="static/js/theme_manual.js"></script>
@@ -620,11 +589,11 @@
                   <div class="se_add_preinstall">
                     <button class="set_se_list_add">
                       <span class="icon iconfont icontianjia"></span>
-                      Add new
+                      新增
                     </button>
                     <button class="set_se_list_preinstall">
                       <span class="icon iconfont iconjinggao"></span>
-                      Reset
+                      重置
                     </button>
                   </div>
                   <div class="add_content se_add_content" style="display: none">
@@ -686,11 +655,11 @@
                   <div class="se_add_preinstall">
                     <button class="set_quick_list_add">
                       <span class="icon iconfont icontianjia"></span>
-                      Add new
+                      新增
                     </button>
                     <button class="set_quick_list_preinstall">
                       <span class="icon iconfont iconjinggao"></span>
-                      Reset
+                      重置
                     </button>
                   </div>
                   <div class="add_content quick_add_content" style="display: none">
@@ -785,7 +754,7 @@
           </form>
           <div class="search-engine" style="display: none">
             <div class="search-engine-head">
-              <strong class="search-engine-tit">Select Search Engine</strong>
+              <strong class="search-engine-tit">选择搜索引擎</strong>
             </div>
             <ul class="search-engine-list">
               <li class="se-li" url="https://www.baidu.com/s" name="wd" img="static/icon/baidu.ico">
@@ -800,9 +769,9 @@
                 <img src="static/icon/bing.ico" />
                 Bing CN
               </li>
-              <li class="se-li" url="https://www.dogedoge.com/results" name="q" img="static/icon/doge_ico.png">
+              <li class="se-li" url="https://fsou.cc/search" name="q" img="static/icon/f_search.svg">
                 <img src="static/icon/doge_ico.png" />
-                多吉
+                F搜
               </li>
               <li class="se-li" url="https://mijisou.com" name="q" img="static/icon/mijisou.png">
                 <img src="static/icon/mijisou.png" />
@@ -890,17 +859,28 @@
         <!--今日诗词 placeholder end-->
       </div>
       <div class="foot">
-        ©️ 2022 index Search by
+        ©️ 2022 简单搜 by
         <a href="https://mast.dragon-fly.club/@holgerhuo" target="_blank"><b>tsvico</b></a>
         <p>
           <a href="https://www.peoplevip.cn" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">我感觉还行</a>
-          |
           <a href="http://beian.miit.gov.cn/" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">鲁ICP备17043918号-1</a>
         </p>
         <p>
-          v0.4-beta
+          <span id="busuanzi_container_site_pv">
+            总访问量
+            <span id="busuanzi_value_site_pv"></span>
+            次
+          </span>
+          <span id="busuanzi_container_site_uv">
+            总访客数
+            <span id="busuanzi_value_site_uv"></span>
+            人
+          </span>
+        </p>
+        <p>
+          v0.0.1
           <pss>
-            <a href="http://i.holger.net.cn" target="_blank"></a>
+            <a href="http://www.peoplevip.cn" target="_blank"></a>
             &nbsp;&nbsp;
             <ping></ping>
           </pss>
@@ -908,6 +888,10 @@
         <script async src="static/js/latency.js"></script>
         <script src="static/js/defocus.js"></script>
         <script async src="static/js/defocus.js"></script>
+        <div style="display: none">
+          <script src="https://s19.cnzz.com/z_stat.php?id=1264554902&web_id=1264554902"></script>
+        </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       </div>
       <!--搜索框和书签 end-->
       <!--
