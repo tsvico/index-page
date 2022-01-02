@@ -2,11 +2,11 @@
 
 一个纯HTML+CSS+JS的极简起始页 [https://i.holger.net.cn](https://i.holger.net.cn) 。
 
-> Forked from [sou2](https://github.com/yeetime/sou2)
+> Forked from [minimalist-search](https://github.com/HolgerHuo/minimalist-search)
 >
-> ©️ 5iux | Yeetime | Holger
+> ©️ 5iux | Yeetime | Holger | tsvico
 
-## 与原版的改动（相对于Yeetime版本）
+## 与原版的改动（相对于Holger版本）
 
 - CSS: 去除无用CSS，精简合并，优化侧边栏动画
 - 文件结构更加整齐（重定位iconfont，css，js文件夹到static下）
@@ -25,15 +25,6 @@
 
   ![此GIF上的配色已过时](https://github.com/HolgerHuo/minimalist-search/raw/master/static/images/darkmode.gif)
 > 此图中配色以过时
-## 计划
-
-- [ ] 搜索记录
-- [ ] 自定义背景
-- [ ] ······
-
-## 下载地址
-
-[Releases](https://github.com/HolgerHuo/minimalist-search/releases)
 
 ------
 
