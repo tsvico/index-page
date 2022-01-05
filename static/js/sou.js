@@ -360,21 +360,12 @@ $(document).ready(function () {
     var html = '';
     var quick_list = getQuickList();
     for (var i in quick_list) {
-      html +=
-        "<li class='quick' target='_blank' title='" +
-        quick_list[i]['explain'] +
-        "'>\
-                        <a class='quick_div_a' target=_blank href='" +
-        quick_list[i]['url'] +
-        "'>\
-                            <i style='background-image: url(" +
-        quick_list[i]['img'] +
-        ");'></i><div id='txtq'>\
-                            " +
-        quick_list[i]['title'] +
-        '</div>\
-                        </a>\
-                     </li>';
+      html += `<li class='quick' target='_blank' title='${quick_list[i]['explain']}'>
+           <a class='quick_div_a' target=_blank href='${quick_list[i]['url']}'> 
+             <i style='background-image: url(${quick_list[i]['img']});'></i>
+             <div id='txtq'>${quick_list[i]['title']}</div>
+          </a>
+        </li>`;
     }
     $('.quick-ul').html(html);
   }
@@ -384,24 +375,16 @@ $(document).ready(function () {
     var quick_list = getQuickList();
     var html = '';
     for (var i in quick_list) {
-      tr =
-        '<tr>\
-                    <td>' +
-        i +
-        '.&nbsp;</td>\
-                    <td>' +
-        quick_list[i]['title'] +
-        "</td>\
-                    <td>\
-                        <button class='edit_quick' value='" +
-        i +
-        "'><span class='iconfont iconbook-edit'></span></button>\
-                        &nbsp;\
-                        <button class='delete_quick' value='" +
-        i +
-        "'><span class='iconfont icondelete'></span></button>\
-                    </td>\
-                </tr>";
+      tr = `<tr>
+          <td>${i}.&nbsp;</td>
+          <td>${quick_list[i]['title']}</td>
+          <td><button class='edit_quick' value='${i}'>
+              <span class='iconfont iconbook-edit'></span>
+              </button>&nbsp;
+              <button class='delete_quick' value='${i}'>
+              <span class='iconfont icondelete'></span></button>
+          </td>
+      </tr>`;
       html += tr;
     }
     $('.quick_list_table').html(html);
@@ -529,5 +512,47 @@ $(document).ready(function () {
 
       alert('Success!');
     }
+  });
+
+  //关键词sug
+  //当键盘键被松开时发送Ajax获取数据
+  $('.wd').keyup(function () {
+    var keywords = $(this).val();
+    if (keywords == '') {
+      $('#word').hide();
+      return;
+    }
+    $.ajax({
+      url: 'https://suggestion.baidu.com/su?wd=' + keywords,
+      dataType: 'jsonp',
+      jsonp: 'cb', //回调函数的参数名(键值)key
+      // jsonpCallback: 'fun', //回调函数名(值) value
+      beforeSend: function () {
+        // $('#word').append('<li>正在加载。。。</li>');
+      },
+      success: function (data) {
+        $('#word').empty().show();
+        if (data.s == '') {
+          //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
+          $('#word').hide();
+        }
+        $.each(data.s, function () {
+          $('#word').append('<li><svg class="icon" style=" width: 15px; height: 15px; opacity: 0.5;" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg> ' + this + '</li>');
+        });
+      },
+      error: function () {
+        $('#word').empty().show();
+        //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
+        $('#word').hide();
+      },
+    });
+  });
+  //点击搜索数据复制给搜索框
+  $(document).on('click', '#word li', function () {
+    var word = $(this).text();
+    $('.wd').val(word);
+    $('#word').hide();
+    $('form').submit();
+    // $('#texe').trigger('click');触发搜索事件
   });
 });

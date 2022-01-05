@@ -746,11 +746,12 @@
         <div class="sou">
           <form target="_blank" class="search" action="https://www.google.com/search">
             <img class="se" src="static/icon/google_1.png" title="Switch" />
-            <input id="search_placeholder" class="wd" type="text" name="wd" placeholder="My life is all about you~" />
+            <input id="search_placeholder" class="wd" type="text" name="wd" placeholder="My life is all about you~" x-webkit-speech lang="zh-CN" autocomplete="off" />
             <button class="s">
               <i style="font-size: 20px" class="iconfont icon-sousuo"></i>
             </button>
           </form>
+          <div id="word"></div>
           <div class="search-engine" style="display: none">
             <div class="search-engine-head">
               <strong class="search-engine-tit">选择搜索引擎</strong>
@@ -790,7 +791,7 @@
                   Blog
                 </a>
               </li>
-              <li class="quick" data-s="github" target="_blank" title="Island">
+              <!--<li class="quick" data-s="github" target="_blank" title="Island">
                 <a target="_blank" href="https://mast.dragon-fly.club/">
                   <i style="background-image: url(https://mast.dragon-fly.club/favicon.ico)"></i>
                   SNS
@@ -813,7 +814,7 @@
                   <i style="background-image: url(static/icon/steam.ico)"></i>
                   Steam
                 </a>
-              </li>
+              </li>-->
             </ul>
           </div>
           <div class="hitokoto">

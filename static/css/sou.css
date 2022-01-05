@@ -154,17 +154,21 @@ a {
 }
 
 .con .sou form .wd {
-  width: 90%;
+  width: 100%;
   height: 100%;
   text-overflow: ellipsis;
   display: block;
   line-height: 100%;
   text-indent: 55px;
   font-size: 18px;
+  border-radius: 25px;
+  transition: 0.3s all;
 }
 
 .con .sou form .wd:focus {
-  background: transparent;
+  background: #fff;
+  box-shadow: 0 0px 15px 0 rgba(32, 33, 36, 0.2);
+  border-color: #fff;
 }
 
 .con .sou form {
@@ -196,6 +200,28 @@ a {
   line-height: 40px;
   border-radius: 50%;
   color: #777;
+}
+
+.con .sou #word {
+  width: calc(100% - 70px);
+  border: 15px solid #f1f1f1;
+  border-radius: 10px;
+  left: 20px;
+  position: absolute;
+  z-index: 9969;
+  top: 65px;
+  background: #f1f1f1;
+  line-height: 30px;
+  font-style: 16px;
+  overflow: hidden;
+  display: none;
+}
+.con .sou #word .li {
+  cursor: pointer;
+  color: #555;
+}
+.con .sou #word .li:hover {
+  color: #29f;
 }
 
 .search-engine {

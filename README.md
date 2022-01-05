@@ -10,6 +10,7 @@
 
 - 替换 cooking 存储为 localStorage;
 - 替换多吉为 F 搜
+- 增加搜索建议
 
 ## TODO
 

@@ -1,21 +1,19 @@
 var ping = 1,
   urlList = ['http://www.peoplevip.cn'];
-setInterval('ping++', 100);
+setInterval('ping++', 20);
 newRequest();
 
 function newRequest() {
-  for (var _0x9121x4 = 0; _0x9121x4 < urlList['length']; _0x9121x4++) {
-    $('pss')['eq'](_0x9121x4)['find']('ping')['html']('Testing...');
-    $('pss')
-      ['eq'](_0x9121x4)
-      ['find']('ping')
-      ['append']("<img src='https://www.peoplevip.cn/ping' width='1' height='1' onerror='autotest(" + _0x9121x4 + ")' style='display:none'>");
+  for (var i = 0; i < urlList.length; i++) {
+    $('pss').eq(i).find('ping').html('Testing...');
+    // prettier-ignore
+    $("pss").eq(i).find("ping").append(
+          `<img src='https://www.peoplevip.cn/ping' width='1' height='1' onerror='autotest("${i}")' style='display:none'>`
+        );
   }
 }
 
-function autotest(_0x9121x4) {
-  $('pss')
-    ['eq'](_0x9121x4)
-    ['find']('ping')
-    ['text'](ping * 10 + 'ms');
+function autotest(a) {
+  // prettier-ignore
+  $("pss").eq(a).find("ping").text(ping * 20 + "ms");
 }
