@@ -516,37 +516,39 @@ $(document).ready(function () {
 
   //关键词sug
   //当键盘键被松开时发送Ajax获取数据
-  $('.wd').keyup(function () {
-    var keywords = $(this).val();
-    if (keywords == '') {
-      $('#word').hide();
-      return;
-    }
-    $.ajax({
-      url: 'https://suggestion.baidu.com/su?wd=' + keywords,
-      dataType: 'jsonp',
-      jsonp: 'cb', //回调函数的参数名(键值)key
-      // jsonpCallback: 'fun', //回调函数名(值) value
-      beforeSend: function () {
-        // $('#word').append('<li>正在加载。。。</li>');
-      },
-      success: function (data) {
-        $('#word').empty().show();
-        if (data.s == '') {
-          //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
-          $('#word').hide();
-        }
-        $.each(data.s, function () {
-          $('#word').append('<li><svg class="icon" style=" width: 15px; height: 15px; opacity: 0.5;" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg> ' + this + '</li>');
-        });
-      },
-      error: function () {
-        $('#word').empty().show();
-        //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
+  $('.wd').keyup(
+    debounce(function () {
+      var keywords = $(this).val();
+      if (keywords == '') {
         $('#word').hide();
-      },
-    });
-  });
+        return;
+      }
+      $.ajax({
+        url: 'https://suggestion.baidu.com/su?wd=' + keywords,
+        dataType: 'jsonp',
+        jsonp: 'cb', //回调函数的参数名(键值)key
+        // jsonpCallback: 'fun', //回调函数名(值) value
+        beforeSend: function () {
+          // $('#word').append('<li>正在加载。。。</li>');
+        },
+        success: function (data) {
+          $('#word').empty().show();
+          if (data.s == '') {
+            //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
+            $('#word').hide();
+          }
+          $.each(data.s, function () {
+            $('#word').append('<li><svg class="icon" style=" width: 15px; height: 15px; opacity: 0.5;" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg> ' + this + '</li>');
+          });
+        },
+        error: function () {
+          $('#word').empty().show();
+          //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
+          $('#word').hide();
+        },
+      });
+    }, 800)
+  );
   //点击搜索数据复制给搜索框
   $(document).on('click', '#word li', function () {
     var word = $(this).text();
@@ -555,4 +557,24 @@ $(document).ready(function () {
     $('form').submit();
     // $('#texe').trigger('click');触发搜索事件
   });
+
+  /**
+   * 防抖函数
+   * @param {*} fn 要执行的函数体
+   * @param {*} wait 等待时间
+   * @returns
+   */
+  function debounce(fn, wait) {
+    let timeout;
+    return function () {
+      let context = this;
+      let args = arguments;
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      timeout = setTimeout(function () {
+        fn.apply(context, args);
+      }, wait);
+    };
+  }
 });
