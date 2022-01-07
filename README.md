@@ -11,6 +11,10 @@
 - 替换 cooking 存储为 localStorage;
 - 替换多吉为 F 搜
 - 增加搜索建议
+- 增加`serviceWorker`缓存清理功能
+
+> 弹窗使用 `jquery-confirm`
+> 文档https://www.jquery-confirm.cn/
 
 ## TODO
 

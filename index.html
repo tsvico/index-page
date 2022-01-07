@@ -36,9 +36,12 @@
     <script type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <!--load sw.js ©️holger-->
     <script async>
-      if (location.protocol == 'https:' && navigator.serviceWorker) {
+      if (navigator.serviceWorker) {
         navigator.serviceWorker.register('sw.js').then(
-          registration => console.log('success'),
+          registration => {
+            console.log('success');
+            window.serviceWorkerRegistration = registration;
+          },
           error => console.error('register error')
         );
       }
@@ -78,6 +81,11 @@
     <script async src="static/css/font_1230786_swt4kkie8ym/iconfont.js"></script>
   </head>
   <body>
+    <div class="top-right clear" style="right: 7.6rem">
+      <a id="clear">
+        <img id="clear-icon" src="static/icon/icon-clear.svg" width="20" height="20" title="" aria-expanded="true" />
+      </a>
+    </div>
     <div class="top-right theme-switch">
       <a id="theme-switch">
         <img id="theme-switch-icon" src="static/icon/icon-light.svg" width="20" height="20" title="" aria-expanded="true" />
@@ -885,6 +893,8 @@
             <ping></ping>
           </pss>
         </p>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
         <script async src="static/js/latency.js"></script>
         <script src="static/js/defocus.js"></script>
         <script async src="static/js/defocus.js"></script>

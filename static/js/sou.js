@@ -577,4 +577,51 @@ $(document).ready(function () {
       }, wait);
     };
   }
+
+  $('#clear-icon').click(() => {
+    $.confirm({
+      title: '清除缓存?',
+      content: '是否要清除浏览器缓存，该操作并不会删除你的用户数据',
+      useBootstrap: false,
+      animation: 'rotateXR',
+      closeAnimation: 'rotateYR',
+      type: 'green',
+      buttons: {
+        ok: {
+          text: '确定',
+          btnClass: 'btn-primary',
+          keys: ['enter'],
+          action: function () {
+            refreshCacheAndReload();
+          },
+        },
+        cancel: {
+          text: '取消',
+          btnClass: 'btn-primary',
+          keys: ['esc'],
+          action: function () {
+            console.log('已取消');
+          },
+        },
+      },
+    });
+  });
+  refreshCacheAndReload = () => {
+    if ('serviceWorker' in navigator) {
+      serviceWorkerRegistration.unregister();
+      caches
+        .keys()
+        .then(cacheNames => {
+          cacheNames.forEach(cacheName => {
+            caches.delete(cacheName);
+          });
+        })
+        .then(() => {
+          console.log('清理成功');
+          setTimeout(function () {
+            window.location.replace('');
+          }, 300);
+        });
+    }
+  };
 });
