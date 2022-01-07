@@ -100,14 +100,6 @@ $(document).ready(function () {
   //快捷方式数据加载
   quickData();
 
-  //判断窗口大小，添加输入框自动完成
-  var wid = $('body').width();
-  if (wid < 640) {
-    $('.wd').attr('autocomplete', 'off');
-  } else {
-    $('.wd').focus();
-  }
-
   //设置内容加载
   setSeInit(); //搜索引擎设置
   setQuickInit(); //快捷方式设置
@@ -554,7 +546,8 @@ $(document).ready(function () {
     var word = $(this).text();
     $('.wd').val(word);
     $('#word').hide();
-    $('form').submit();
+    setTimeout($('form').submit(), 800);
+    // $('form').submit();
     // $('#texe').trigger('click');触发搜索事件
   });
 

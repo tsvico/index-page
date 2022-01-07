@@ -220,11 +220,11 @@ input.wd {
   overflow: hidden;
   display: none;
 }
-.con .sou #word .li {
+.con .sou #word li {
   cursor: pointer;
   color: #0c0202;
 }
-.con .sou #word .li:hover {
+.con .sou #word li:hover {
   color: #29f;
 }
 
