@@ -4,9 +4,9 @@ var usedTime = 0;
 var isManualFocus = false;
 
 function check() {
-  if (!isManualFocus && document['activeElement']['tagName']['toLowerCase']() == 'input') {
+  if (!isManualFocus && document.activeElement.tagName.toLowerCase() == 'input') {
     console['log']('BLURRED');
-    document['activeElement']['blur']();
+    document.activeElement.blur();
   }
   usedTime += timeoutInterval;
   if (usedTime < maxTime) {
@@ -14,12 +14,11 @@ function check() {
   }
 }
 check();
-document['body']['addEventListener']('click', function (_0x45a9x6) {
-  if (_0x45a9x6['target']['tagName'] == 'INPUT') {
-    console['log']('MANUAL CLICK');
+document.body.addEventListener('click', function (dom) {
+  if (dom.target.tagName == 'INPUT') {
     isManualFocus = true;
   }
 });
-document['body']['addEventListener']('keydown', function (_0x45a9x6) {
+document.body.addEventListener('keydown', function (_0x45a9x6) {
   isManualFocus = true;
 });
