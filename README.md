@@ -1,6 +1,8 @@
 # Minimalist Search
 
-一个纯 HTML+CSS+JS 的极简起始页 [https://i.holger.net.cn](https://i.holger.net.cn) 。
+一个纯 HTML+CSS+JS 的极简起始页 。
+
+[![tooln.cn]( https://svg.bookmark.style/api?url=https://www.tooln.cn)]( https://www.tooln.cn)
 
 > Forked from [minimalist-search](https://github.com/HolgerHuo/minimalist-search)
 >
