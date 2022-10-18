@@ -1,8 +1,8 @@
-# Minimalist Search
-
 一个纯 HTML+CSS+JS 的极简起始页 。
 
-[![tooln.cn]( https://svg.bookmark.style/api?url=https://www.tooln.cn)]( https://www.tooln.cn)
+[![tooln.cn](https://svg.bookmark.style/api?url=https://www.tooln.cn)](https://www.tooln.cn)
+
+---
 
 > Forked from [minimalist-search](https://github.com/HolgerHuo/minimalist-search)
 >
@@ -17,9 +17,5 @@
 
 > 弹窗使用 `jquery-confirm`
 > 文档https://www.jquery-confirm.cn/
-
-## TODO
-
-- 历史搜索记录
 
 **本项目基于 GPL-3.0 协议**

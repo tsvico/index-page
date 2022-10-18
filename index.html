@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<!--
-    Copyright 2020 Holger https://holger.net.cn Under GPLv3.0 @ https://github.com/holgerhuo/minimalist-search
--->
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <!--begin seo-->
-    <meta name="copyright" content="©️ 2021 tsvico GPLv3.0" />
+    <meta name="copyright" content="©️ 2022 tsvico GPLv3.0" />
     <meta name="author" content="tsvico" />
-    <title>我感觉还行</title>
-    <meta name="keywords" content="我感觉还行,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航" />
-    <meta name="description" content="我感觉还行" />
+    <title>工具牛🐂</title>
+    <meta name="keywords" content="工具牛🐂,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航" />
+    <meta name="description" content="工具牛🐂" />
     <!-- / FB Open Graph -->
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.peoplevip.cn" />
-    <meta property="og:title" content="简单搜 - A homepage for everyone" />
-    <meta property="og:description" content="简单搜 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
-    <meta property="og:image" content="./static/images/avatar.png" />
-    <meta property="og:site_name" content="简单搜 - A homepage with all websites you want!" />
+    <meta property="og:url" content="https://www.tooln.cn" />
+    <meta property="og:title" content="工具牛🐂 - A homepage for everyone" />
+    <meta property="og:description" content="工具牛🐂 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
+    <meta property="og:image" content="./logo1.svg" />
+    <meta property="og:site_name" content="工具牛🐂 - A homepage with all websites you want!" />
     <!-- / FB Open Graph end -->
     <!-- / Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="简单搜 - A homepage for everyone" />
-    <meta name="twitter:description" content="简单搜 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
-    <meta name="twitter:image" content="./static/images/avatar.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="twitter:title" content="工具牛🐂 - A homepage for everyone" />
+    <meta name="twitter:description" content="工具牛🐂 - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!" />
+    <meta name="twitter:image" content="./logo1.svg" />
     <!-- / Twitter Cards end -->
     <!--seo end-->
     <!--link external resources-->
     <link rel="stylesheet" href="static/css/sou.css" />
     <link id="daily-theme" rel="stylesheet" href="static/css/sou.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" data-original-media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" />
     <link id="dark-theme" rel="stylesheet" href="static/css/sou_night.css" media="(prefers-color-scheme: dark)" data-original-media="(prefers-color-scheme: dark)" />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
+    <!--<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />-->
+    <link href="https://fonts.loli.net/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
     <!--引用Google Fonts Josefin Sans-->
     <link rel="manifest" href="static/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="/css/public.min.css" />
     <script type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script src="/js/public.js"></script>
+    <script>
+      // if(is_mobile()){
+      // window.location.href = "https://m.tooln.cn";
+      //  }
+    </script>
     <!--load sw.js ©️holger-->
     <script async>
-      if (navigator.serviceWorker) {
+      if (location.protocol == 'https:' && navigator.serviceWorker) {
         navigator.serviceWorker.register('sw.js').then(
           registration => {
             console.log('success');
@@ -52,14 +58,21 @@
     <script>
       var storage = window.localStorage;
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLC0C6BP1R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-NLC0C6BP1R');
+    </script>
     <!-- analytics end-->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" href="./static/images/avatar-300x300.webp" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="./static/images/server/apple-touch-icon.png" />
-    <meta name="msapplication-TileImage" content="./static/images/avatar-300x300.webp" />
-    <link rel="shortcut icon" href="./static/images/avatar-300x300.webp" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -71,7 +84,7 @@
     <!--QQ强制全屏-->
     <meta name="x5-page-mode" content="app" />
     <!--QQ应用模式-->
-    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/jquery-3.6.0.min.js"></script>
     <script src="static/js/jQuery.rTabs.js"></script>
     <script src="static/js/sou.js"></script>
     <script async src="static/js/theme_auto.js"></script>
@@ -288,17 +301,6 @@
                   <a rel="nofollow" href="https://dyartstyle.com/temai/" target="_blank">
                     <i class="iconfont icon-temai" style="color: #ff6019"></i>
                     淘宝特卖
-                  </a>
-                </li>
-                <li>
-                  <a
-                    rel="nofollow"
-                    href="https://mobile.yangkeduo.com/duo_cms_mall.html?pid=8742514_71211367&cpsSign=CM_190605_8742514_71211367_92fdd9f7fb637fec599bf556f263ed1f&duoduo_type=2&launch_wx=1"
-                    title="拼多多手机端专属商城，超低价商品火热抢购中，更有超多大额优惠券持续发放，一键立抢>>"
-                    target="_blank"
-                  >
-                    <i class="iconfont icon-99" style="color: #f83e3e"></i>
-                    拼多多
                   </a>
                 </li>
                 <li>
@@ -777,58 +779,22 @@
                 <img src="static/icon/bing.ico" />
                 Bing CN
               </li>
-              <li class="se-li" url="https://fsou.cc/search" name="q" img="static/icon/f_search.svg">
-                <img src="static/icon/doge_ico.png" />
-                F搜
-              </li>
-              <li class="se-li" url="https://mijisou.com" name="q" img="static/icon/mijisou.png">
-                <img src="static/icon/mijisou.png" />
-                秘迹
-              </li>
-              <li class="se-li" url="https://seeres.com/search" name="q" img="static/icon/seeres.png">
-                <img src="static/icon/seeres.png" />
-                seeres*
-              </li>
             </ul>
           </div>
           <div class="quick-div">
             <ul class="quick-ul">
               <li class="quick" data-s="bilibili" target="_blank" title="Holger's Blog">
-                <a target="_blank" href="https://blog.holger.net.cn">
-                  <i style="background-image: url(./static/images/avatar-300x300.webp)"></i>
+                <a target="_blank" href="https://blog.tooln.cn">
+                  <i style="background-image: url(./logo1.svg)"></i>
                   Blog
                 </a>
               </li>
-              <!--<li class="quick" data-s="github" target="_blank" title="Island">
-                <a target="_blank" href="https://mast.dragon-fly.club/">
-                  <i style="background-image: url(https://mast.dragon-fly.club/favicon.ico)"></i>
-                  SNS
-                </a>
-              </li>
-              <li class="quick" data-s="scp" target="_blank" title="GitHub">
-                <a target="_blank" rel="nofollow" href="https://github.com">
-                  <i style="background-image: url(static/icon/github.ico)"></i>
-                  GitHub
-                </a>
-              </li>
-              <li class="quick" data-s="v2ex" target="_blank" title="V2EX">
-                <a rel="nofollow" href="https://www.v2ex.com/">
-                  <i style="background-image: url(static/icon/v2ex.png)"></i>
-                  V2EX
-                </a>
-              </li>
-              <li class="quick" data-s="steam" target="_blank" title="Steam">
-                <a target="_blank" rel="nofollow" href="https://store.steampowered.com/">
-                  <i style="background-image: url(static/icon/steam.ico)"></i>
-                  Steam
-                </a>
-              </li>-->
             </ul>
           </div>
           <div class="hitokoto">
-            <p id="hitokoto">😀 Loading...</p>
+            <p id="hitokoto">🐕 Loading...</p>
             ——「
-            <span id="from">😀 Loading...</span>
+            <span id="from">🐕 Loading...</span>
             」
           </div>
         </div>
@@ -867,11 +833,11 @@
         <!--今日诗词 placeholder end-->
       </div>
       <div class="foot">
-        ©️ 2022 简单搜 by
+        ©️ 2022 工具牛🐂 by
         <a href="https://github.com/tsvico" target="_blank"><b>tsvico</b></a>
         <p>
-          <a href="https://www.peoplevip.cn" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">我感觉还行</a>
-          <a href="http://beian.miit.gov.cn/" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">鲁ICP备17043918号-1</a>
+          <a id="beiantxt" href="https://www.tooln.cn" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">工具牛🐂</a>
+          <a id="beian" href="http://beian.miit.gov.cn/" target="_blank" style="text-decoration: none" onmouseover="this.style.cssText='color:#000000; text-decoration:none;'" onmouseout="this.style.cssText='color:#666666;text-decoration:none'">鲁ICP备17043918号-4</a>
         </p>
         <p>
           <span id="busuanzi_container_site_pv">
@@ -886,42 +852,55 @@
           </span>
         </p>
         <p>
-          v0.0.1
+          v0.1.0
           <pss>
-            <a href="http://www.peoplevip.cn" target="_blank"></a>
+            <a href="http://www.tooln.cn" target="_blank"></a>
             &nbsp;&nbsp;
             <ping></ping>
           </pss>
         </p>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+        <script src="//cdn.bootcdn.net/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
         <script async src="static/js/latency.js"></script>
         <script src="static/js/defocus.js"></script>
         <script async src="static/js/defocus.js"></script>
-        <div style="display: none">
-          <script src="https://s19.cnzz.com/z_stat.php?id=1264554902&web_id=1264554902"></script>
-        </div>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script>
+          /*
+        	const domain = window.location.host;
+            if (false && !window.localStorage.getItem("msg")) {
+                $.confirm({
+                      title: '提示',
+                      content: '是否切换到新域名 https://www.tooln.cn',
+                      useBootstrap: false,
+                      animation: 'rotateXR',
+                      closeAnimation: 'rotateYR',
+                      type: 'green',
+                      buttons: {
+                        ok: {
+                          text: '是',
+                          btnClass: 'btn-primary',
+                          keys: ['enter'],
+                          action: function () {
+                             window.location.replace("http://www.tooln.cn");
+                          },
+                        },
+                        cancel: {
+                          text: '否,不再提示',
+                          btnClass: 'btn-primary',
+                          keys: ['esc'],
+                          action: function () {
+                            console.log('已取消');
+                             window.localStorage.setItem("msg", false);
+                          },
+                        },
+                      },
+                    });
+            }
+            */
+        </script>
       </div>
       <!--搜索框和书签 end-->
-      <!--
-        作者:D.Young
-        主页：https://yyv.me/
-        github：https://github.com/5iux/sou
-        日期：2019-07-26
-        版权所有，请勿删除
-        ❶❷❸❹❺❻❼❽❾❿
-        由 yeetime 修改
-        github：https://github.com/yeetime/sou2
-        日期：2019-12-13
-        Modified by Holger Huo
-        https://mast.dragon-fly.club/@holgerhuo
-        Apr.11 2020
-
-        由tsvico 修改
-        github: https://github.com/tsvico/index-search
-        日期：2022-01-02
-        -->
     </div>
   </body>
 </html>

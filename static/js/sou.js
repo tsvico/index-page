@@ -1,18 +1,3 @@
-/*
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
-❶❷❸❹❺❻❼❽❾❿
-由 yeetime 修改
-github：https://github.com/yeetime/sou2
-日期：2019-12-13
-Modified by Holger Huo
-https://blog.holger.net.cn/
-Apr.11 2020
-*/
-
 $(document).ready(function () {
   //搜索引擎列表【预设】
   var se_list_preinstall = {
@@ -39,24 +24,17 @@ $(document).ready(function () {
     },
     4: {
       id: 4,
-      title: 'F搜',
-      url: 'https://fsou.cc/search',
+      title: 'DuckDuckGo',
+      url: 'https://duckduckgo.com/',
       name: 'q',
-      img: './static/icon/f_search.svg',
+      img: './static/icon/duckduckgo.svg',
     },
     5: {
       id: 5,
-      title: '秘迹',
-      url: 'https://mijisou.com',
+      title: 'f搜',
+      url: 'https://fsoufsou.com/search',
       name: 'q',
-      img: './static/icon/mijisou.png',
-    },
-    6: {
-      id: 6,
-      title: 'seeres*',
-      url: 'https://seeres.com/search',
-      name: 'q',
-      img: './static/icon/seeres.png',
+      img: './static/icon/f_search.svg',
     },
   };
 
@@ -64,33 +42,33 @@ $(document).ready(function () {
   var quick_list_preinstall = {
     1: {
       title: 'Blog',
-      url: 'https://blog.peoplevip.cn/',
-      img: 'https://i.holger.net.cn/static/images/avatar-300x300.webp',
-      explain: "Holger's Blog",
+      url: 'https://blog.tooln.cn/',
+      img: '/img/write2.png',
+      explain: 'Blog',
     },
     2: {
-      title: 'Island',
-      url: 'https://mast.dragon-fly.club',
-      img: 'https://mast.dragon-fly.club/favicon.ico',
-      explain: 'Island 岛屿 | 一座属于你的岛屿',
+      title: 'Tool',
+      url: '/tool',
+      img: '/img/tool.png',
+      explain: '工具集',
     },
     3: {
-      title: 'V2EX',
-      url: 'https://www.v2ex.com/',
-      img: './static/icon/v2ex.png',
-      explain: 'V2EX',
+      title: '请求头获取',
+      url: '/tool/header',
+      img: '/img/header.png',
+      explain: '返回当前请求的Header',
     },
     4: {
-      title: 'Steam',
-      url: 'https://store.steampowered.com/',
-      img: './static/icon/steam.ico',
-      explain: 'Steam',
+      title: '常用脚本',
+      url: '/tool/j?id=word',
+      img: '/img/jianli.png',
+      explain: '常用代码片段',
     },
     5: {
-      title: 'GitHub',
-      url: 'https://github.com/',
-      img: './static/icon/github.ico',
-      explain: 'GitHub',
+      title: '在线记事本',
+      url: '/notes/',
+      img: '/img/write.png',
+      explain: '在线同步编辑记事本',
     },
   };
 
@@ -546,8 +524,8 @@ $(document).ready(function () {
     var word = $(this).text();
     $('.wd').val(word);
     $('#word').hide();
+    $('form').submit();
     setTimeout($('form').submit(), 800);
-    // $('form').submit();
     // $('#texe').trigger('click');触发搜索事件
   });
 
@@ -599,6 +577,7 @@ $(document).ready(function () {
       },
     });
   });
+
   refreshCacheAndReload = () => {
     if ('serviceWorker' in navigator) {
       serviceWorkerRegistration.unregister();
@@ -611,6 +590,9 @@ $(document).ready(function () {
         })
         .then(() => {
           console.log('清理成功');
+          //   (await indexedDB.databases()).forEach(db => {
+          //       indexedDB.deleteDatabase(db.name)
+          //   })
           setTimeout(function () {
             window.location.replace('');
           }, 300);

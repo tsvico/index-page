@@ -1,19 +1,11 @@
-var ping = 1,
-  urlList = ['http://www.peoplevip.cn'];
-setInterval('ping++', 20);
-newRequest();
-
-function newRequest() {
-  for (var i = 0; i < urlList.length; i++) {
-    $('pss').eq(i).find('ping').html('Testing...');
-    // prettier-ignore
-    $("pss").eq(i).find("ping").append(
-          `<img src='https://www.peoplevip.cn/ping' width='1' height='1' onerror='autotest("${i}")' style='display:none'>`
-        );
+let t = window.performance && window.performance.timing;
+let timer = setInterval(() => {
+  const res = t.domInteractive - t.fetchStart;
+  if (res > 0) {
+    $('pss')
+      .eq(0)
+      .find('ping')
+      .text(`${t.domInteractive - t.fetchStart}ms`);
+    clearInterval(timer);
   }
-}
-
-function autotest(a) {
-  // prettier-ignore
-  $("pss").eq(a).find("ping").text(ping * 20 + "ms");
-}
+}, 20);
